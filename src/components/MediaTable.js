@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import {useEffect, useState} from 'react';
 import MediaRow from './MediaRow';
-import { baseUrl } from '../utils/variables';
+import {baseUrl} from '../utils/variables';
 
 const MediaTable = () => {
   const [mediaArray, setMediaArray] = useState([]);
@@ -9,10 +9,12 @@ const MediaTable = () => {
     try {
       const mediaResponse = await fetch(baseUrl + 'media');
       const media = await mediaResponse.json();
-      const allFiles = await Promise.all(media.map((file) => {
-        const fileResponse =  await fetch(`${baseUrl}media/${file.file.id}`);
-        return await fileResponse.json();
-      }));
+      const allFiles = await Promise.all(
+        media.map(async (file) => {
+          const fileResponse = await fetch(`${baseUrl}media/${file.file_id}`);
+          return await fileResponse.json();
+        })
+      );
       setMediaArray(allFiles);
     } catch (err) {
       alert(err.message);
