@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {mediaUrl} from '../utils/variables';
 
 const MediaRow = ({file}) => {
-  console.log('MediaRow');
   return (
     <tr>
       <td>
-        <img src={mediaUrl + file.thumbnails.w169} alt="kissa" />
+        <img src={mediaUrl + file.thumbnails.w160} alt={file.title} />
       </td>
       <td>
         <h4>{file.title}</h4>
         <p>{file.description}</p>
       </td>
       <td>
-        <a href={file.filename}>View</a>
+        <Link to={'/single'} state={{file}}>
+          View
+        </Link>
       </td>
     </tr>
   );
