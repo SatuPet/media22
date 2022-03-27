@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [https://users.metropolia.fi/~satupet/media_4/media22/my-app/build/](oma) to view it in your browser.
+Open [oma](https://users.metropolia.fi/~satupet/media_4/media22/my-app/build/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
