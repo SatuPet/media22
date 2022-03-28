@@ -1,21 +1,38 @@
 import PropTypes from 'prop-types';
-import {mediaUrl} from '../utils/variables';
+import { Link } from 'react-router-dom';
+import { mediaUrl } from '../utils/variables';
+import { ImageListItemBar, IconButton, makeStyles } from '@mui/material';
+import PageviewIcon from '@material-ui/icons/Pageview';
 
-const MediaRow = ({file}) => {
-  console.log('MediaRow');
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    color: 'rgba(255, 255, 255, 0.54)',
+  },
+}));
+
+const MediaRow = ({ file }) => {
+  const classes = useStyles();
   return (
-    <tr>
-      <td>
-        <img src={mediaUrl + file.thumbnails.w169} alt="kissa" />
-      </td>
-      <td>
-        <h4>{file.title}</h4>
-        <p>{file.description}</p>
-      </td>
-      <td>
-        <a href={file.filename}>View</a>
-      </td>
-    </tr>
+    <>
+      <img src={mediaUrl + file.thumbnails.w320} alt={file.title} />
+      <ImageListItemBar
+        title={file.title}
+        subtitle={file.description}
+        actionIcon={
+          <>
+            <IconButton
+              aria-label={`info about ${file.title}`}
+              component={Link}
+              to="/single"
+              state={{ file }}
+              className={classes.icon}
+            >
+              <PageviewIcon fontSize="large" />
+            </IconButton>
+          </>
+        }
+      />
+    </>
   );
 };
 

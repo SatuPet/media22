@@ -13,7 +13,6 @@ const Nav = () => {
       const userData = await getUser(localStorage.getItem('token'));
       console.log(userData);
       setUser(userData);
-      navigate('/home');
     } catch (err) {
       setUser(null);
       navigate('/');
@@ -32,7 +31,7 @@ const Nav = () => {
         <li>
           <Link to={'/home'}>Home</Link>
         </li>
-        {user && (
+        {user?.username && (
           <>
             <li>
               <Link to={'/profile'}>Profile</Link>
