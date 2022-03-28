@@ -17,7 +17,7 @@ const LoginForm = (props) => {
     console.log('doLogin');
     try {
       const userData = await postLogin(inputs);
-      console.log(userData);
+      console.log(userData.user);
       localStorage.setItem('token', userData.token);
       navigate('/home');
     } catch (err) {
