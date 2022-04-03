@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <>
-        <Typography component="h1" variant="h2" gutterBottom>
+        <Typography component="h1" variant="h2">
           Home
         </Typography>
         <MediaTable />
