@@ -7,13 +7,15 @@ import useForm from '../hooks/FormHooks';
 
 const LoginForm = () => {
   // eslint-disable-next-line no-unused-vars
-  const [user, setUser] = useContext(MediaContext);
+  const {user, setUser} = useContext(MediaContext);
   const alkuarvot = {
     username: '',
     password: '',
   };
+
   const {postLogin} = useLogin();
   const navigate = useNavigate();
+
   const doLogin = async () => {
     console.log('doLogin');
     try {
@@ -25,6 +27,7 @@ const LoginForm = () => {
       alert(err.message);
     }
   };
+
   const {inputs, handleInputChange, handleSubmit} = useForm(doLogin, alkuarvot);
   console.log(inputs);
   return (
