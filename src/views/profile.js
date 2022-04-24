@@ -21,6 +21,7 @@ const Profile = () => {
     filename: 'https://placekitten.com/320',
   });
   const {getTag} = useTag();
+
   const fetchAvatar = async () => {
     if (user) {
       const avatars = await getTag('avatar_' + user.user_id);
@@ -29,6 +30,7 @@ const Profile = () => {
       setAvatar(ava);
     }
   };
+
   useEffect(() => {
     fetchAvatar();
   }, [user]);
@@ -43,14 +45,14 @@ const Profile = () => {
           <CardContent>
             <List>
               <ListItem>
-                <ListItemAvatar sx={{mx: 'auto', width: '100%'}}>
+                <ListItemAvatar sx={{width: '100%'}}>
                   <Avatar
                     variant="square"
                     src={avatar.filename}
                     imgProps={{
                       alt: `${user.username}'s profile image`,
                     }}
-                    sx={{mx: 'auto', width: '100%', height: '30vh'}}
+                    sx={{width: '100%', height: '30vh'}}
                   />
                 </ListItemAvatar>
               </ListItem>

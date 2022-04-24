@@ -44,4 +44,6 @@ const Single = () => {
   );
 };
 
+// TODO in the next task: add propType for location
+
 export default Single;
