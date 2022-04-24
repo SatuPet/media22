@@ -12,8 +12,10 @@ const LoginForm = () => {
     username: '',
     password: '',
   };
+
   const {postLogin} = useLogin();
   const navigate = useNavigate();
+
   const doLogin = async () => {
     console.log('doLogin');
     try {
@@ -25,6 +27,7 @@ const LoginForm = () => {
       alert(err.message);
     }
   };
+
   const {inputs, handleInputChange, handleSubmit} = useForm(doLogin, alkuarvot);
   console.log(inputs);
   return (

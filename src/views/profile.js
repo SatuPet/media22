@@ -21,6 +21,7 @@ const Profile = () => {
     filename: 'https://placekitten.com/320',
   });
   const {getTag} = useTag();
+
   const fetchAvatar = async () => {
     if (user) {
       const avatars = await getTag('avatar_' + user.user_id);
@@ -29,6 +30,7 @@ const Profile = () => {
       setAvatar(ava);
     }
   };
+
   useEffect(() => {
     fetchAvatar();
   }, [user]);

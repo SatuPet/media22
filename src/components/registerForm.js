@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import PropTypes from 'prop-types';
 import {useUser} from '../hooks/ApiHooks';
 import useForm from '../hooks/FormHooks';
 import {Grid} from '@mui/material';
@@ -12,7 +14,9 @@ const RegisterForm = (props) => {
     email: '',
     full_name: '',
   };
+
   const {postUser, getUsername} = useUser();
+
   const doRegister = async () => {
     console.log('doRegister');
     try {
@@ -25,6 +29,7 @@ const RegisterForm = (props) => {
       alert(err.message);
     }
   };
+
   const {inputs, handleInputChange, handleSubmit} = useForm(
     doRegister,
     alkuarvot
@@ -85,4 +90,5 @@ const RegisterForm = (props) => {
 };
 
 RegisterForm.propTypes = {};
+
 export default RegisterForm;

@@ -18,7 +18,6 @@ import {MediaContext} from '../contexts/MediaContext';
 import {useUser} from '../hooks/ApiHooks';
 import {Home, AccountCircle} from '@mui/icons-material';
 
-
 const Nav = () => {
   const [user, setUser] = useContext(MediaContext);
   const [open, setOpen] = useState(false);
@@ -35,12 +34,15 @@ const Nav = () => {
       navigate('/');
     }
   };
+
   useEffect(() => {
     fetchUser();
   }, []);
+
   console.log(user, open);
 
-  <Box>
+  return (
+    <Box>
       <AppBar position="static">
         <Toolbar>
           <IconButton
