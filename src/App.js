@@ -1,15 +1,15 @@
-import { Container } from '@mui/material';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Container} from '@mui/material';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
-import { MediaProvider } from './contexts/MediaContext';
+import {MediaProvider} from './contexts/MediaContext';
 import Home from './views/Home';
 import Login from './views/Login';
 import Logout from './views/Logout';
 import Profile from './views/Profile';
 import Single from './views/Single';
-import { themeOptions } from './theme/themeOptions';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {themeOptions} from './theme/themeOptions';
+import {ThemeProvider, createTheme} from '@mui/material/styles';
 import Upload from './views/Upload';
 
 const theme = createTheme(themeOptions);
